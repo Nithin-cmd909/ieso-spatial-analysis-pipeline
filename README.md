@@ -49,7 +49,14 @@ Where $X_{i,t}$ denotes local node attributes, and $\Omega_{t}$ contains systemi
 
 Instead of executing trades across all intervals, trades are placed only when the predicted class probability clears an asymmetric execution threshold:
 
-$$\text{Signal}_{i,t} = \begin{cases} 1 \quad (\text{Long Spread}) & \text{if } \hat{p}_{i,t} \ge \tau_{\text{upper}} \\ 0 \quad (\text{No Trade}) & \text{if } \tau_{\text{lower}} < \hat{p}_{i,t} < \tau_{\text{upper}} \\ -1 \quad (\text{Short Spread}) & \text{if } \hat{p}_{i,t} \le \tau_{\text{lower}} \end{cases}$$
+$$
+\text{Signal}_{i,t} = 
+\begin{cases} 
+1 \quad (\text{Long Spread}) & \text{if } \hat{p}_{i,t} \ge \tau_{\text{upper}} \\
+0 \quad (\text{No Trade}) & \text{if } \tau_{\text{lower}} < \hat{p}_{i,t} < \tau_{\text{upper}} \\
+-1 \quad (\text{Short Spread}) & \text{if } \hat{p}_{i,t} \le \tau_{\text{lower}}
+\end{cases}
+$$
 
 Setting $\tau_{\text{upper}} = 0.60$ and $\tau_{\text{lower}} = 0.40$ isolates structural tail divergence from market noise.
 
